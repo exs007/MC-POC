@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[Customers](
+	[CustomerId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_Customers_CustomerId] PRIMARY KEY CLUSTERED 
+(
+	[CustomerId] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

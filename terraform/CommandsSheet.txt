@@ -1,0 +1,20 @@
+-- create a container in the staorage account to manage terraform state
+.\CreateStorageAccount.ps1 -groupName:{GROUP_NAME} -storageAccount:{STORAGE_ACCOUNT_NAME}
+
+-- init backed
+terraform init -backend-config "storage_account_name={STORAGE_ACCOUNT_NAME}" -backend-config "access_key={ACCESS_KEY_FROM_STEP_ABOVE}"
+
+terraform plan
+terraform apply
+
+-- skip manual check
+terraform apply -auto-approve
+
+-- dry run
+..\charts\ms\upgradeManual.ps1
+
+--upgrade
+..\charts\ms\upgradeManual.ps1 -dryRun:$false
+
+-- stop AKS cluster
+az aks stop --name {GROUP-NAME}-aks --resource-group {GROUP-NAME}

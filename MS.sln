@@ -1,0 +1,109 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.API.Customers", "src\MS.API.Customers\MS.API.Customers.csproj", "{85748D1C-0034-4A36-BD51-07DA6E3D60FC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5CCE67CA-E58B-49B1-9D92-4A716C18A579}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.API", "src\MS.API\MS.API.csproj", "{8046425E-74B9-40ED-8495-BA5A7996FECF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.DataAccess", "src\MS.DataAccess\MS.DataAccess.csproj", "{623C9A75-420C-48C8-9BDA-8952614D0A09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Core", "src\MS.Core\MS.Core.csproj", "{198CE69A-0030-4610-BF68-FE819CA52982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charts", "charts", "{566D2233-D1F5-40C5-97CD-A961F5588763}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ms", "ms", "{1DCBE1AF-9BF2-4408-B77C-36EEABA92BA9}"
+	ProjectSection(SolutionItems) = preProject
+		charts\ms\.helmignore = charts\ms\.helmignore
+		charts\ms\Chart.lock = charts\ms\Chart.lock
+		charts\ms\Chart.yaml = charts\ms\Chart.yaml
+		charts\ms\values.yaml = charts\ms\values.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charts", "charts", "{1942E93A-BF05-4198-A8BB-0B4289CD4C48}"
+	ProjectSection(SolutionItems) = preProject
+		charts\ms\charts\ingress-nginx-3.29.0.tgz = charts\ms\charts\ingress-nginx-3.29.0.tgz
+		charts\ms\charts\seq-2021.1.5425.tgz = charts\ms\charts\seq-2021.1.5425.tgz
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ms-api-customers", "ms-api-customers", "{F65C818D-0663-4DC5-85D0-6424E8C959E0}"
+	ProjectSection(SolutionItems) = preProject
+		charts\ms\charts\ms-api-customers\.helmignore = charts\ms\charts\ms-api-customers\.helmignore
+		charts\ms\charts\ms-api-customers\Chart.yaml = charts\ms\charts\ms-api-customers\Chart.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charts", "charts", "{9A9F74FF-2B68-46B0-9D6F-1188B11B9E53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{B126B092-050B-4099-B128-FFB3362A9ED2}"
+	ProjectSection(SolutionItems) = preProject
+		charts\ms\charts\ms-api-customers\templates\_helpers.tpl = charts\ms\charts\ms-api-customers\templates\_helpers.tpl
+		charts\ms\charts\ms-api-customers\templates\deployment.yaml = charts\ms\charts\ms-api-customers\templates\deployment.yaml
+		charts\ms\charts\ms-api-customers\templates\ingress.yaml = charts\ms\charts\ms-api-customers\templates\ingress.yaml
+		charts\ms\charts\ms-api-customers\templates\NOTES.txt = charts\ms\charts\ms-api-customers\templates\NOTES.txt
+		charts\ms\charts\ms-api-customers\templates\service.yaml = charts\ms\charts\ms-api-customers\templates\service.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B15CC454-49D0-4C42-8D0A-569FEF538429}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.DataAccess.Tests", "src\MS.DataAccess.Tests\MS.DataAccess.Tests.csproj", "{9200DDB3-0A01-4B6B-8E2B-9A93C35EE6F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7100432C-0B0B-4187-B808-3E8E59B39B1E}"
+	ProjectSection(SolutionItems) = preProject
+		MS-POC-Components.png = MS-POC-Components.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.API.Tests", "src\MS.API.Tests\MS.API.Tests.csproj", "{41DDDA9B-2BB4-4C5C-8C7C-A33702ED3C14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85748D1C-0034-4A36-BD51-07DA6E3D60FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85748D1C-0034-4A36-BD51-07DA6E3D60FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85748D1C-0034-4A36-BD51-07DA6E3D60FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85748D1C-0034-4A36-BD51-07DA6E3D60FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCE67CA-E58B-49B1-9D92-4A716C18A579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCE67CA-E58B-49B1-9D92-4A716C18A579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCE67CA-E58B-49B1-9D92-4A716C18A579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCE67CA-E58B-49B1-9D92-4A716C18A579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8046425E-74B9-40ED-8495-BA5A7996FECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8046425E-74B9-40ED-8495-BA5A7996FECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8046425E-74B9-40ED-8495-BA5A7996FECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8046425E-74B9-40ED-8495-BA5A7996FECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623C9A75-420C-48C8-9BDA-8952614D0A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623C9A75-420C-48C8-9BDA-8952614D0A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623C9A75-420C-48C8-9BDA-8952614D0A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623C9A75-420C-48C8-9BDA-8952614D0A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198CE69A-0030-4610-BF68-FE819CA52982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198CE69A-0030-4610-BF68-FE819CA52982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198CE69A-0030-4610-BF68-FE819CA52982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198CE69A-0030-4610-BF68-FE819CA52982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9200DDB3-0A01-4B6B-8E2B-9A93C35EE6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9200DDB3-0A01-4B6B-8E2B-9A93C35EE6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9200DDB3-0A01-4B6B-8E2B-9A93C35EE6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9200DDB3-0A01-4B6B-8E2B-9A93C35EE6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41DDDA9B-2BB4-4C5C-8C7C-A33702ED3C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41DDDA9B-2BB4-4C5C-8C7C-A33702ED3C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41DDDA9B-2BB4-4C5C-8C7C-A33702ED3C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41DDDA9B-2BB4-4C5C-8C7C-A33702ED3C14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DCBE1AF-9BF2-4408-B77C-36EEABA92BA9} = {566D2233-D1F5-40C5-97CD-A961F5588763}
+		{1942E93A-BF05-4198-A8BB-0B4289CD4C48} = {1DCBE1AF-9BF2-4408-B77C-36EEABA92BA9}
+		{F65C818D-0663-4DC5-85D0-6424E8C959E0} = {1942E93A-BF05-4198-A8BB-0B4289CD4C48}
+		{9A9F74FF-2B68-46B0-9D6F-1188B11B9E53} = {F65C818D-0663-4DC5-85D0-6424E8C959E0}
+		{B126B092-050B-4099-B128-FFB3362A9ED2} = {F65C818D-0663-4DC5-85D0-6424E8C959E0}
+		{B15CC454-49D0-4C42-8D0A-569FEF538429} = {B126B092-050B-4099-B128-FFB3362A9ED2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46E94270-EF89-4FC0-A2B7-2BCD4477F459}
+	EndGlobalSection
+EndGlobal

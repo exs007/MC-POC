@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  MS.api.customers:
+    image: ms-api-customers
+    build:
+      context: ./
+      dockerfile: src/MS.API.Customers/Dockerfile

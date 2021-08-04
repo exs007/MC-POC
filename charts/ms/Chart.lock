@@ -1,0 +1,9 @@
+dependencies:
+- name: seq
+  repository: https://helm.datalust.co
+  version: 2021.1.5425
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 3.29.0
+digest: sha256:ea2f0cf1d39f145faf7ce93f4b83d505bb437cc7c41f456c7b330cf01665c05a
+generated: "2021-04-16T21:17:06.0715766-04:00"

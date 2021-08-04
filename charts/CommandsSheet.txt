@@ -1,0 +1,16 @@
+az aks browse --resource-group {GROUP-NAME} --name {GROUP-NAME}-aks
+
+-- dry run
+ms\upgradeManual.ps1
+
+--upgrade
+ms\upgradeManual.ps1 -dryRun:$false
+
+helm list
+
+helm uninstall ms
+
+kubectl apply -f dns/pod.yaml
+kubectl exec -i -t dnsutils -- nslookup ms-seq.default.svc.cluster.local
+kubectl exec -i -t services/ms-api-customers -- bash
+kubectl logs services/ms-api-customers

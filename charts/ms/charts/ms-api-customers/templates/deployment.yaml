@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ms-api-customers.fullname" . }}
+  labels:
+    {{- include "ms-api-customers.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      {{- include "ms-api-customers.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "ms-api-customers.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: ms-api-customers-container
+          image: {{ .Values.image.repository }}/ms-api-customers:{{ .Values.image.tag | default .Chart.AppVersion }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          {{- $env := merge (.Values.appenv | default dict) (.Values.global.appenv | default dict) -}}
+          {{ range $k, $v := $env }}
+          - name: {{ $k | quote }}
+            value: {{ $v | quote }}
+          {{- end }}
+          ports:
+          - containerPort: 80
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

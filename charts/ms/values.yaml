@@ -1,0 +1,83 @@
+global:
+  appenv: 
+    "ENVIRONMENT": "__ENVIRONMENT__"
+
+ms-api-customers:
+  replicaCount: 1
+
+  image:
+    repository: __ACR__
+    pullPolicy: Always
+    tag: "__IMG_VERSION__"
+
+  service:
+    type: ClusterIP
+    port: 80
+
+  ingress:
+    annotations: {
+        kubernetes.io/ingress.class: nginx,
+        nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    }
+    hosts:
+    - host: __MSAPIHOST__
+      paths:
+      - path: /
+  
+  autoscaling:
+    enabled: false
+
+  resources: 
+    requests:
+      cpu: 250m
+    limits:
+      cpu: 500m
+
+seq:
+  persistence:
+    existingClaim: ms-disks-seq-pvc
+    storageClass: managed-premium
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+  ui:
+    ingress:
+      enabled: true
+      path: /
+      hosts:
+      - __MSSEQHOST__
+  ingestion:
+    ingress:
+      enabled: true
+      path: /
+      hosts:
+      - ingestion.__MSSEQHOST__
+
+ingress-nginx:
+  controller:
+    replicaCount: 1
+    nodeSelector:
+      beta.kubernetes.io/os: linux   
+    admissionWebhooks:
+      patch:
+        nodeSelector: 
+          beta.kubernetes.io/os: linux          
+    service:
+      annotations: {
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: __RG__
+      }
+      loadBalancerIP: __PUBLICIP__
+      enableHttps: false
+      httpsPort:
+        enable: false
+  defaultBackend: 
+    nodeSelector:
+      beta.kubernetes.io/os: linux
+
+disks:
+  seq:
+    capacity:
+      storage: 8Gi
+    azureDisk:
+      diskName: __SEQ-DISK__
+      diskURI: /subscriptions/__SUB-ID__/resourceGroups/__RG__/providers/Microsoft.Compute/disks/__SEQ-DISK__

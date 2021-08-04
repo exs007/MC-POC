@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ms-api-customers.fullname" . }}
+  labels:
+    {{- include "ms-api-customers.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - port: {{ .Values.service.port }}
+  selector:
+    {{- include "ms-api-customers.selectorLabels" . | nindent 4 }}
